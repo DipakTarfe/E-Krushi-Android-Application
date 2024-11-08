@@ -1,0 +1,133 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.e_krushi'
+    compileSdk 32
+
+
+    gradle.projectsEvaluated {
+        tasks.matching {
+            it.name.startsWith('check')
+        }.configureEach {
+            it.enabled = false
+        }
+    }
+    defaultConfig {
+        applicationId "com.example.e_krushi"
+        minSdk 23
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures{
+        dataBinding=true
+        mlModelBinding true
+    }
+}
+
+dependencies {
+    implementation 'androidx.annotation:annotation:1.2.0'
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.preference:preference:1.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.6.0'
+    implementation 'androidx.navigation:navigation-ui:2.6.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.0'
+    implementation 'androidx.core:core:1.10.1'
+    implementation 'androidx.security:security-crypto:1.0.0'
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'androidx.room:room-common:2.5.1'
+    implementation 'androidx.room:room-runtime:2.5.1'
+    annotationProcessor 'androidx.room:room-compiler:2.5.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.android.volley:volley:1.2.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'androidx.test:core:1.5.0'
+    testImplementation 'androidx.test:runner:1.5.2'
+    testImplementation 'androidx.test:rules:1.5.0'
+    testImplementation 'androidx.test:monitor:1.6.1'
+    testImplementation 'androidx.test.ext:junit:1.1.5'
+    testImplementation 'org.mockito:mockito-core:5.3.1'
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'org.mockito:mockito-android:5.3.1'
+
+    /* For Loading images from internet - Start */
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+    /* For Slider - End */
+
+    /* For Rounded Image View */
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    /* For Material Search Bar */
+    implementation 'com.github.mancj:MaterialSearchBar:0.8.5'
+
+    /* For Slider - Start */
+    // Material Components for Android. Replace the version with the latest version of Material Components library.
+    implementation 'com.google.android.material:material:1.5.0'
+    // Circle Indicator (To fix the xml preview "Missing classes" error)
+    implementation 'me.relex:circleindicator:2.1.6'
+    implementation 'org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0'
+    /* For Slider - End */
+
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.23'
+
+    implementation 'com.github.hishd:TinyCart:1.0.1'
+    implementation 'com.github.delight-im:Android-AdvancedWebView:v3.2.1'
+
+    implementation 'com.google.code.gson:gson:2.8.8'
+
+    //Profile picture
+    implementation 'com.github.Drjacky:ImagePicker:1.8.4'
+
+    //custom toast
+    implementation 'io.github.muddz:styleabletoast:2.4.0'
+
+    //DiseaseDetection
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
+
+    // TensorFlow Input Model
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0-rc1'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc1'
+
+    //otp pin view design
+    implementation 'com.github.chaosleong:PinView:1.4.3'
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.3.0'
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.3.1'
+
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
+            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
+            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+        }
+    }
+}

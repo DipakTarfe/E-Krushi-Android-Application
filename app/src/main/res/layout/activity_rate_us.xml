@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.RateUsActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rate_icon"
+        android:layout_gravity="center"
+        android:layout_marginTop="302dp"
+        android:layout_marginLeft="150dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Rate Us"
+        android:textColor="@color/black"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="180dp"/>
+    </RelativeLayout>
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="0"
+        android:progressTint="@color/green"
+        android:layout_gravity="center"
+        android:layout_marginTop="3dp" />
+
+    <Button
+        android:id="@+id/myRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Rating?"
+        android:layout_gravity="center"
+        android:background="@color/black"
+        android:layout_marginTop="250dp" />
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/green"
+    android:gravity="bottom">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="20dp">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:shapeAppearanceOverlay="@style/circular"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/white"
+            android:padding="2dp"
+            android:src="@drawable/default_user_profile"
+            android:layout_centerVertical="true"
+            />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Name"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        android:layout_toRightOf="@+id/profile_image"
+        android:layout_centerVertical="true"
+        android:includeFontPadding="false"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/useremail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Email"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        android:includeFontPadding="false"
+        android:layout_toRightOf="@+id/profile_image"
+        android:layout_below="@+id/username"
+        android:layout_marginLeft="10dp" />
+    </RelativeLayout>
+
+</LinearLayout>

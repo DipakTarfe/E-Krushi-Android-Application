@@ -1,0 +1,12 @@
+            <Button
+                android:id="@+id/addToCartBtn"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginBottom="2dp"
+                android:drawableEnd="@drawable/ic_baseline_shopping_cart_24"
+                android:drawableTint="@color/green"
+                android:background="@drawable/custom_button"
+                android:text="Add to cart"
+                android:textColor="@color/green"
+                android:textAllCaps="false"/>

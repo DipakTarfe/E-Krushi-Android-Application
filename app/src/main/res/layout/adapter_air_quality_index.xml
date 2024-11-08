@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="20dp"
+    android:animateLayoutChanges="true"
+    android:animationCache="true"
+    android:background="@drawable/round_square"
+    android:orientation="vertical"
+    android:paddingStart="18dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="10dp"
+    android:visibility="visible">
+
+    <!--    Title !-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/airquality"
+            app:tint="@color/colorIcons" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/title_air_quality"
+            android:textColor="@color/colorFirstText"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp">
+
+            <ImageView
+                android:id="@+id/airquality_circle"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/circle"
+                android:backgroundTint="@color/colorUvLow"
+                android:backgroundTintMode="src_in"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/airquality_text"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/airquality_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="18dp"
+                android:text="1"
+                android:textColor="@color/colorFirstText"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toBottomOf="@id/airquality_circle"
+                app:layout_constraintLeft_toLeftOf="@id/airquality_circle"
+                app:layout_constraintRight_toRightOf="@id/airquality_circle"
+                app:layout_constraintTop_toTopOf="@id/airquality_circle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="45dp"
+                android:text="AQI"
+                android:textColor="@color/colorFirstText"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/airquality_circle"
+                app:layout_constraintLeft_toLeftOf="@id/airquality_circle"
+                app:layout_constraintRight_toRightOf="@id/airquality_circle"
+                app:layout_constraintTop_toTopOf="@id/airquality_circle" />
+
+            <TextView
+                android:id="@+id/airquality_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:text="@string/air_quality_1"
+                android:textColor="@color/colorFirstText"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/airquality_circle"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="5dp">
+
+            <TextView
+                android:id="@+id/composition_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:text="@string/title_air_quality_concentrations"
+                android:textColor="@color/colorFirstText"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/composition_title"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <fr.qgdev.openweather.customview.GaugeBarView
+                android:id="@+id/air_quality_gauge_so2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:labelText="SO₂"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/composition_title"
+                app:sectionsBoundaries="@array/air_quality_sections_boundaries_so2"
+                app:sectionsColors="@array/air_quality_sections_colors"
+                app:value="50" />
+
+            <fr.qgdev.openweather.customview.GaugeBarView
+                android:id="@+id/air_quality_gauge_no2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:labelText="NO₂"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/air_quality_gauge_so2"
+                app:sectionsBoundaries="@array/air_quality_sections_boundaries_no2"
+                app:sectionsColors="@array/air_quality_sections_colors"
+                app:value="50" />
+
+            <fr.qgdev.openweather.customview.GaugeBarView
+                android:id="@+id/air_quality_gauge_pm10"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:labelText="PM₁₀"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/air_quality_gauge_no2"
+                app:sectionsBoundaries="@array/air_quality_sections_boundaries_pm10"
+                app:sectionsColors="@array/air_quality_sections_colors"
+                app:value="50" />
+
+            <fr.qgdev.openweather.customview.GaugeBarView
+                android:id="@+id/air_quality_gauge_pm2_5"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:labelText="PM₂.₅"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/air_quality_gauge_pm10"
+                app:sectionsBoundaries="@array/air_quality_sections_boundaries_pm2_5"
+                app:sectionsColors="@array/air_quality_sections_colors"
+                app:value="50" />
+
+            <fr.qgdev.openweather.customview.GaugeBarView
+                android:id="@+id/air_quality_gauge_o3"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:labelText="O₃"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/air_quality_gauge_pm2_5"
+                app:sectionsBoundaries="@array/air_quality_sections_boundaries_o3"
+                app:sectionsColors="@array/air_quality_sections_colors"
+                app:value="50" />
+
+            <fr.qgdev.openweather.customview.GaugeBarView
+                android:id="@+id/air_quality_gauge_co"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:labelText="CO"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/air_quality_gauge_o3"
+                app:sectionsBoundaries="@array/air_quality_sections_boundaries_co"
+                app:sectionsColors="@array/air_quality_sections_colors"
+                app:value="50" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/air_quality_composition_unit"
+                android:textColor="@color/colorTertiaryText"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/air_quality_information_dialog"
+                app:layout_constraintTop_toBottomOf="@id/air_quality_gauge_co" />
+
+
+            <ImageView
+                android:id="@+id/air_quality_information_dialog"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_about_us_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/air_quality_gauge_co" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</LinearLayout>
